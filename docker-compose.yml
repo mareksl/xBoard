@@ -1,0 +1,39 @@
+version: "3.4"
+services:
+  hello:
+    image: x-board-hello:dev
+    networks:
+      - envoymesh
+    build:
+      context: ./services/hello
+      target: dev
+    depends_on:
+      - proxy
+    ports:
+      - 50051:50051
+
+  frontend:
+    image: x-board-frontend:dev
+    networks:
+      - envoymesh
+    build:
+      context: frontend
+      target: dev
+    depends_on:
+      - hello
+      - proxy
+    ports:
+      - 4200:4200
+
+  proxy:
+    image: envoyproxy/envoy-alpine
+    networks:
+      - envoymesh
+    environment:
+      NODE_ENV: development
+    ports:
+      - 8080:8080
+      - 8081:8081
+
+networks:
+  envoymesh: {}

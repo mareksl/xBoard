@@ -1,0 +1,33 @@
+version: "3.4"
+services:
+  hello:
+    image: mareksl/x-board-hello:prod
+    deploy:
+      replicas: 2
+      update_config:
+        parallelism: 2
+        delay: 10s
+      restart_policy:
+        condition: on-failure
+
+  frontend:
+    image: mareksl/x-board-frontend:prod
+    ports:
+      - 80:80
+    deploy:
+      replicas: 2
+      update_config:
+        parallelism: 2
+        delay: 10s
+      restart_policy:
+        condition: on-failure
+
+  proxy:
+    image: mareksl/x-board-proxy:prod
+    deploy:
+      replicas: 2
+      update_config:
+        parallelism: 2
+        delay: 10s
+      restart_policy:
+        condition: on-failure
