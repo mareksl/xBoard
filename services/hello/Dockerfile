@@ -9,7 +9,7 @@ RUN npm install --only-production \
 FROM install AS dev
 ENV NODE_ENV=development
 RUN npm install --only-development
-CMD ["npm", "start"]
+CMD ["npm", "run", "start:dev"]
 
 FROM install AS build
 COPY . .
