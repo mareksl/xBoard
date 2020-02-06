@@ -7,6 +7,7 @@ import { GRPC_HELLO_SERVICE_CLIENT_SETTINGS } from "./proto/hello/src/hello/hell
 import { environment } from "../environments/environment";
 import { GRPC_INTERCEPTORS } from "@ngx-grpc/core";
 import { GrpcWebDevtoolsInterceptor } from "./grpc-web-devtools.interceptor";
+import { GRPC_USERS_SERVICE_CLIENT_SETTINGS } from "./proto/users/src/users/users.pbconf";
 
 @NgModule({
   declarations: [AppComponent],
@@ -19,6 +20,10 @@ import { GrpcWebDevtoolsInterceptor } from "./grpc-web-devtools.interceptor";
     },
     {
       provide: GRPC_HELLO_SERVICE_CLIENT_SETTINGS,
+      useValue: { host: environment.host }
+    },
+    {
+      provide: GRPC_USERS_SERVICE_CLIENT_SETTINGS,
       useValue: { host: environment.host }
     }
   ],

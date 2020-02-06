@@ -4,3 +4,8 @@
     ID: {{ message.id }}, TODO: {{ message.message }}
   </li>
 </ul>
+<ul class="users-list">
+  <li class="users-list__item" *ngFor="let user of users$ | async">
+    ID: {{ user.id }}, TODO: {{ user.username }}
+  </li>
+</ul>
