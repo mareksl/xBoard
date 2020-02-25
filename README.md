@@ -1,5 +1,7 @@
 # xBoard
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/f493c855556648c7ae95e69b0036e400)](https://app.codacy.com/manual/mareksl/xBoard?utm_source=github.com&utm_medium=referral&utm_content=mareksl/xBoard&utm_campaign=Badge_Grade_Dashboard)
+
 Project team management board for efficient allocation of developer resources to ongoing and upcoming projects
 
 ## Table of contents
