@@ -9,7 +9,7 @@ export class HelloController {
   constructor(private readonly helloService: HelloService) {}
 
   @GrpcMethod('HelloService')
-  findOne(data: HelloById, metadata: any): Hello {
+  findOne(data: HelloById, metadata?: any): Hello {
     const { id } = data;
     return this.helloService.findOne(id);
   }
@@ -20,7 +20,7 @@ export class HelloController {
   }
 
   @GrpcMethod('HelloService')
-  addOne(data: Hello, metadata: any): Hello {
+  addOne(data: Hello, metadata?: any): Hello {
     return this.helloService.addOne(data);
   }
 }
