@@ -2,7 +2,9 @@ import { GrpcCallType, GrpcHandler, GrpcInterceptor, GrpcRequest } from '@ngx-gr
 import { Status } from 'grpc-web';
 import { Observable, throwError } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
+import { Injectable } from "@angular/core";
 
+@Injectable()
 export class GrpcWebDevtoolsInterceptor implements GrpcInterceptor {
 
   intercept<REQ, RES>(request: any, next: any): Observable<RES | Status> {
