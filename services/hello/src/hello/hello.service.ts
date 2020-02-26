@@ -1,28 +1,28 @@
 import { Injectable } from '@nestjs/common';
 import { Hello, HelloList } from './interfaces/hello.interface';
 
+export const mockMessages: Hello[] = [
+  { id: 1, message: 'Hello World' },
+  { id: 2, message: 'Hello Poland' },
+  { id: 3, message: 'Hello STX' },
+];
+
 @Injectable()
 export class HelloService {
-  private messages: Hello[] = [
-    { id: 1, message: 'Hello World' },
-    { id: 2, message: 'Hello Poland' },
-    { id: 3, message: 'Hello STX' },
-  ];
-
   findOne(id: number): Hello {
-    return this.messages.find(hello => hello.id === id);
+    return mockMessages.find(hello => hello.id === id);
   }
 
   findAll(): HelloList {
-    return { messages: this.messages.slice() };
+    return { messages: mockMessages.slice() };
   }
 
   addOne(hello: Hello): Hello {
     const item: Hello = {
       ...hello,
-      id: this.messages.length + 1,
+      id: mockMessages.length + 1,
     };
-    this.messages.push(item);
+    mockMessages.push(item);
     return item;
   }
 }
