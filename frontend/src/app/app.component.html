@@ -1,6 +1,9 @@
-<h1 class="heading">Hello Messages</h1>
-<ul class="todo-list">
-  <li class="todo-list__item" *ngFor="let message of messages$ | async">
-    ID: {{ message.id }}, TODO: {{ message.message }}
+<ul class="app__links">
+  <li>
+    <a href="/">home</a>
+  </li>
+  <li>
+    <a href="hello">hello</a>
   </li>
 </ul>
+<router-outlet></router-outlet>

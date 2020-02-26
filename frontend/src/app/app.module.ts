@@ -7,10 +7,11 @@ import { GRPC_HELLO_SERVICE_CLIENT_SETTINGS } from "./proto/hello/src/hello/hell
 import { environment } from "../environments/environment";
 import { GRPC_INTERCEPTORS } from "@ngx-grpc/core";
 import { GrpcWebDevtoolsInterceptor } from "./grpc-web-devtools.interceptor";
+import { HelloModule } from "./hello/hello.module";
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [BrowserModule, AppRoutingModule, HelloModule],
   providers: [
     {
       provide: GRPC_INTERCEPTORS,
