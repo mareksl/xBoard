@@ -9,7 +9,7 @@ export class UsersController {
   constructor(private readonly usersService: UsersService) {}
 
   @GrpcMethod('UsersService')
-  findOne(data: UserById, metadata: any): User {
+  findOne(data: UserById, metadata?: any): User {
     const { id } = data;
     return this.usersService.findOne(id);
   }
@@ -20,7 +20,7 @@ export class UsersController {
   }
 
   @GrpcMethod('UsersService')
-  addOne(data: User, metadata: any): User {
+  addOne(data: User, metadata?: any): User {
     return this.usersService.addOne(data);
   }
 }
