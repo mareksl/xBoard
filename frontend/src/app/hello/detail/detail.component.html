@@ -1,1 +1,4 @@
-<p>detail works!</p>
+<div class="detail" *ngIf="hello$">
+    <p class="detail__id">ID: {{ hello$.id }}</p>
+    <p class="detail__message">MESSAGE: {{ hello$.message }}</p>
+</div>
