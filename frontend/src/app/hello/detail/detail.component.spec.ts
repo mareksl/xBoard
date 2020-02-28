@@ -6,11 +6,6 @@ import { DetailComponent } from './detail.component';
 import { DebugElement } from '@angular/core';
 import { By } from '@angular/platform-browser';
 
-const message: any = {
-  id: 1,
-  message: 'Lorem Ipsum',
-};
-
 describe('DetailComponent', () => {
   let component: DetailComponent;
   let fixture: ComponentFixture<DetailComponent>;
