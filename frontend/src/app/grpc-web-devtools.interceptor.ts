@@ -2,7 +2,7 @@ import { GrpcCallType, GrpcHandler, GrpcInterceptor, GrpcRequest } from '@ngx-gr
 import { Status } from 'grpc-web';
 import { Observable, throwError } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
-import { Injectable } from "@angular/core";
+import { Injectable } from '@angular/core';
 
 @Injectable()
 export class GrpcWebDevtoolsInterceptor implements GrpcInterceptor {
