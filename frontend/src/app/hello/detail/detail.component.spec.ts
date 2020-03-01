@@ -5,6 +5,7 @@ import { HelloServiceClient } from './../../proto/hello/src/hello/hello.pb';
 import { DetailComponent } from './detail.component';
 import { DebugElement } from '@angular/core';
 import { By } from '@angular/platform-browser';
+import { of } from 'rxjs';
 
 describe('DetailComponent', () => {
   let component: DetailComponent;
@@ -56,14 +57,12 @@ describe('DetailComponent', () => {
   });
 
   it('shows details', () => {
-    helloService.findOne.and.returnValue({
-      subscribe: jasmine.createSpy().and.callFake(callback => {
-        callback({
-          id: '1',
-          message: 'message',
-        });
+    helloService.findOne.and.returnValue(
+      of({
+        id: '1',
+        message: 'message',
       }),
-    });
+    );
 
     fixture.detectChanges();
     const detailId = el.query(By.css('.detail .detail__id'));
@@ -71,5 +70,5 @@ describe('DetailComponent', () => {
 
     expect(detailId.nativeNode.innerHTML).toBe('ID: 1');
     expect(detailMessage.nativeNode.innerHTML).toBe('MESSAGE: message');
-  })
+  });
 });
