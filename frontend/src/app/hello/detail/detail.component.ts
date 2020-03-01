@@ -5,6 +5,7 @@ import {
   Hello,
   HelloById,
 } from 'src/app/proto/hello/src/hello/hello.pb';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-detail',
@@ -13,7 +14,7 @@ import {
 })
 export class DetailComponent implements OnInit {
   private detailId: number;
-  hello: Hello;
+  hello$: Observable<Hello>;
 
   constructor(
     private route: ActivatedRoute,
@@ -25,10 +26,7 @@ export class DetailComponent implements OnInit {
       this.detailId = Number(params.get('id'));
     });
 
-    this.helloService
-      .findOne(new HelloById({ id: this.detailId }))
-      .subscribe(hello => {
-        this.hello = hello;
-      })
+    this.hello$ = this.helloService
+      .findOne(new HelloById({ id: this.detailId }));
   }
 }
