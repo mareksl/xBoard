@@ -1,17 +1,17 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { GRPC_HELLO_SERVICE_CLIENT_SETTINGS } from './proto/hello/src/hello/hello.pbconf';
+import { GRPC_USERS_SERVICE_CLIENT_SETTINGS } from './proto/users/src/users/users.pbconf';
 import { environment } from '../environments/environment';
 import { GRPC_INTERCEPTORS } from '@ngx-grpc/core';
 import { GrpcWebDevtoolsInterceptor } from './grpc-web-devtools.interceptor';
-import { GRPC_USERS_SERVICE_CLIENT_SETTINGS } from './proto/users/src/users/users.pbconf';
+import { HelloModule } from './hello/hello.module';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [BrowserModule, AppRoutingModule, HelloModule],
   providers: [
     {
       provide: GRPC_INTERCEPTORS,
