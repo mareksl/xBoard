@@ -8,7 +8,9 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "proto:generate": "protoc --plugin=protoc-gen-ng=./node_modules/.bin/protoc-gen-ng --ng_out=./src/app/proto -I ../services ../services/**/src/**/*.proto"
+    "proto:generate": "protoc --plugin=protoc-gen-ng=./node_modules/.bin/protoc-gen-ng --ng_out=./src/app/proto -I ../services ../services/**/src/**/*.proto",
+    "cy:open": "CYPRESS_BASE_URL=http://localhost:4200 cypress open",
+    "cy:run": "CYPRESS_BASE_URL=http://localhost:4200 cypress run"
   },
   "private": true,
   "dependencies": {
@@ -37,6 +39,8 @@
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "^12.11.1",
     "codelyzer": "^5.1.2",
+    "cypress": "^4.1.0",
+    "cypress-protobuf": "^1.0.5",
     "jasmine-core": "~3.4.0",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~4.1.0",
