@@ -57,15 +57,11 @@ describe('DetailComponent', () => {
 
   it('shows details', () => {
     helloService.findOne.and.returnValue({
-      toPromise: jasmine.createSpy().and.callFake(callback => {
-        return {
-          then: jasmine.createSpy().and.callFake(callback => {
-            callback({
-              id: '1',
-              message: 'message',
-            });
-          }),
-        };
+      subscribe: jasmine.createSpy().and.callFake(callback => {
+        callback({
+          id: '1',
+          message: 'message',
+        });
       }),
     });
 
