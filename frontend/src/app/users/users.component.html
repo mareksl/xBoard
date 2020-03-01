@@ -1,0 +1,6 @@
+<h1 class="heading">Users</h1>
+<ul class="users-list">
+  <li class="users-list__item" *ngFor="let user of users$ | async">
+    ID: {{ user.id }}, USER: {{ user.username }}
+  </li>
+</ul>

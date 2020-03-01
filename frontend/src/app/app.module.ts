@@ -8,10 +8,11 @@ import { environment } from '../environments/environment';
 import { GRPC_INTERCEPTORS } from '@ngx-grpc/core';
 import { GrpcWebDevtoolsInterceptor } from './grpc-web-devtools.interceptor';
 import { HelloModule } from './hello/hello.module';
+import { UsersModule } from './users/users.module';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, AppRoutingModule, HelloModule],
+  imports: [BrowserModule, AppRoutingModule, HelloModule, UsersModule],
   providers: [
     {
       provide: GRPC_INTERCEPTORS,
