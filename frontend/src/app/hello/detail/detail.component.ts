@@ -13,7 +13,7 @@ import {
 })
 export class DetailComponent implements OnInit {
   private detailId: number;
-  hello$: Hello;
+  hello: Hello;
 
   constructor(
     private route: ActivatedRoute,
@@ -27,9 +27,8 @@ export class DetailComponent implements OnInit {
 
     this.helloService
       .findOne(new HelloById({ id: this.detailId }))
-      .toPromise()
-      .then(hello => {
-        this.hello$ = hello;
-      });
+      .subscribe(hello => {
+        this.hello = hello;
+      })
   }
 }
