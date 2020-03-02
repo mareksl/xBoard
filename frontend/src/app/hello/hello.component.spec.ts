@@ -23,7 +23,7 @@ describe('HelloComponent', () => {
   let component: HelloComponent;
   let fixture: ComponentFixture<HelloComponent>;
   let el: DebugElement;
-  let helloService: any
+  let helloService: any;
 
   beforeEach(async(() => {
     const helloServiceSpy = jasmine.createSpyObj('HelloServiceClient', [

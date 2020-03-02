@@ -1,15 +1,15 @@
-import { NgModule } from "@angular/core";
-import { Routes, RouterModule } from "@angular/router";
-import { HelloComponent } from "./hello.component";
-import { DetailComponent } from "./detail/detail.component";
+import { NgModule } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
+import { HelloComponent } from './hello.component';
+import { DetailComponent } from './detail/detail.component';
 
 const routes: Routes = [
-  { path: "hello", component: HelloComponent },
-  { path: "hello/:id", component: DetailComponent }
+  { path: ':id', component: DetailComponent },
+  { path: '', component: HelloComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class HelloRoutingModule {}
