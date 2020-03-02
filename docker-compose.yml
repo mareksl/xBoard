@@ -12,6 +12,18 @@ services:
     ports:
       - 50051:50051
 
+  users:
+    image: x-board-users:dev
+    networks:
+      - envoymesh
+    build:
+      context: ./services/users
+      target: dev
+    depends_on:
+      - proxy
+    ports:
+      - 50052:50052
+
   frontend:
     image: x-board-frontend:dev
     networks:
@@ -21,6 +33,7 @@ services:
       target: dev
     depends_on:
       - hello
+      - users
       - proxy
     ports:
       - 4200:4200
