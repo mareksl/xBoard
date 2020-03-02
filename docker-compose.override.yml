@@ -4,6 +4,11 @@ services:
     volumes:
       - ./services/hello:/usr/src/app:rw
       - /usr/src/app/node_modules
+      
+  users:
+    volumes:
+      - ./services/users:/usr/src/app:rw
+      - /usr/src/app/node_modules
 
   frontend:
     volumes:
