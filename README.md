@@ -55,7 +55,10 @@ in the frontend or any of the services directories.
 
 ### E2E Tests
 
-TBD
+#### Cypress
+
+- `yarn cy:run`
+- `yarn cy:open`
 
 ## Deployment
 
