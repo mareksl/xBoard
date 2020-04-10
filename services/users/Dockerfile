@@ -1,17 +1,16 @@
 FROM node:12.8-alpine as install
-ENV NODE_ENV=production
 EXPOSE 50051
 WORKDIR /usr/src/app
 COPY package*.json ./
-RUN npm install --only-production \
+RUN npm install \
     && npm cache clean --force
 
 FROM install AS dev
 ENV NODE_ENV=development
-RUN npm install --only-development
 CMD ["npm", "run", "start:dev"]
 
 FROM install AS build
+ENV NODE_ENV=production
 COPY . .
 RUN npm run build
 
