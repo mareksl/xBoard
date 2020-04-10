@@ -1,7 +1,7 @@
 # xBoard
 
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/f493c855556648c7ae95e69b0036e400)](https://app.codacy.com/manual/mareksl/xBoard?utm_source=github.com&utm_medium=referral&utm_content=mareksl/xBoard&utm_campaign=Badge_Grade_Dashboard)
-[![buddy pipeline](https://app.buddy.works/xboard-app/xboard/pipelines/pipeline/236598/badge.svg?token=3bd7174e11b1b81b22592205b9c0fb7503f186046e3abad0bc86c15015e744f8 "buddy pipeline")](https://app.buddy.works/xboard-app/xboard/pipelines/pipeline/236598)
+[![buddy pipeline](https://app.buddy.works/xboard-app/xboard/pipelines/pipeline/236598/badge.svg?token=d10f19cbcc47131ed692d978ecce2d09eac332f41ee1923c01569ba19a511fdd "buddy pipeline")](https://app.buddy.works/xboard-app/xboard/pipelines/pipeline/236598)
 
 Project team management board for efficient allocation of developer resources to ongoing and upcoming projects
 
