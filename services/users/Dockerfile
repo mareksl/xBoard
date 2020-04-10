@@ -13,7 +13,7 @@ CMD ["npm", "run", "start:dev"]
 
 FROM install AS build
 COPY . .
-RUN npm build
+RUN npm run build
 
 FROM install AS prod
 COPY --from=build /usr/src/app/dist .
