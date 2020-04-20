@@ -1,5 +1,6 @@
 # xBoard
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/f493c855556648c7ae95e69b0036e400)](https://app.codacy.com/manual/mareksl/xBoard?utm_source=github.com&utm_medium=referral&utm_content=mareksl/xBoard&utm_campaign=Badge_Grade_Dashboard)
 [![buddy pipeline](https://app.buddy.works/xboard-app/xboard/pipelines/pipeline/236598/badge.svg?token=d10f19cbcc47131ed692d978ecce2d09eac332f41ee1923c01569ba19a511fdd "buddy pipeline")](https://app.buddy.works/xboard-app/xboard/pipelines/pipeline/236598)
 
@@ -13,6 +14,7 @@ Project team management board for efficient allocation of developer resources to
 - [Running tests](#running-tests)
   - [Unit tests](#unit-tests)
   - [E2E Tests](#e2e-tests)
+    - [Cypress](#cypress)
 - [Deployment](#deployment)
 - [Built With](#built-with)
 - [Contributing](#contributing)
@@ -78,4 +80,4 @@ TBD
 
 ## License
 
-TBD
+This project is licensed under the terms of the MIT license.
