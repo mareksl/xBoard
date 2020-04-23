@@ -89,7 +89,8 @@
             "codeCoverageExclude": [
               "src/app/proto/**/*.pb.ts",
               "src/app/proto/**/*.pbconf.ts",
-              "src/app/grpc-web-devtools.interceptor.ts"
+              "src/app/grpc-web-devtools.interceptor.ts",
+              "src/app/**/*.stories.ts"
             ]
           }
         },
