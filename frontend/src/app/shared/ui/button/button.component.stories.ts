@@ -2,11 +2,12 @@ import { action } from '@storybook/addon-actions';
 import { moduleMetadata } from '@storybook/angular';
 
 import { ButtonComponent } from './button.component';
+import { UiModule } from '../ui.module';
 
 export default {
   title: 'Button',
   component: ButtonComponent,
-  decorators: [moduleMetadata({ declarations: [ButtonComponent] })],
+  decorators: [moduleMetadata({ imports: [UiModule] })],
 };
 
 export const Text = () => ({

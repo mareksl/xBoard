@@ -9,10 +9,17 @@ import { GRPC_INTERCEPTORS } from '@ngx-grpc/core';
 import { GrpcWebDevtoolsInterceptor } from './grpc-web-devtools.interceptor';
 import { HelloModule } from './hello/hello.module';
 import { UsersModule } from './users/users.module';
+import { UiModule } from './shared/ui/ui.module';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, AppRoutingModule, HelloModule, UsersModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HelloModule,
+    UsersModule,
+    UiModule,
+  ],
   providers: [
     {
       provide: GRPC_INTERCEPTORS,
