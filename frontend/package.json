@@ -11,7 +11,7 @@
     "proto:generate": "protoc --plugin=protoc-gen-ng=./node_modules/.bin/protoc-gen-ng --ng_out=./src/app/proto -I ../services ../services/**/src/**/*.proto",
     "cy:open": "CYPRESS_BASE_URL=http://localhost:4200 cypress open",
     "cy:run": "CYPRESS_BASE_URL=http://localhost:4200 cypress run",
-    "storybook": "start-storybook -p 6006",
+    "storybook": "start-storybook -p 6006 --ci --quiet",
     "build-storybook": "build-storybook"
   },
   "dependencies": {
