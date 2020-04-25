@@ -35,20 +35,20 @@ describe('ButtonComponent', () => {
   it('should call clicked on button click', fakeAsync(() => {
     const button = el.query(By.css('button'));
     const event = new MouseEvent('click');
-    spyOn(component, 'clicked');
+    spyOn(component, 'onClick');
 
     button.triggerEventHandler('click', event);
     tick();
 
-    expect(component.clicked).toHaveBeenCalledWith(event);
+    expect(component.onClick).toHaveBeenCalledWith(event);
   }));
 
   it('should emit click event', () => {
-    spyOn(component.click, 'emit');
+    spyOn(component.clicked, 'emit');
     const event = new MouseEvent('click');
 
-    component.clicked(event);
+    component.onClick(event);
 
-    expect(component.click.emit).toHaveBeenCalledWith(event);
+    expect(component.clicked.emit).toHaveBeenCalledWith(event);
   });
 });

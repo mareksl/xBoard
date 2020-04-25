@@ -6,16 +6,15 @@ import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
   styleUrls: ['./button.component.scss'],
 })
 export class ButtonComponent implements OnInit {
-  @Input() disabled = false;
-  // tslint:disable-next-line: no-output-native
-  @Output() click: EventEmitter<MouseEvent> = new EventEmitter();
+  @Input() disabled: boolean;
+  @Output() clicked: EventEmitter<MouseEvent> = new EventEmitter();
 
   constructor() {}
 
   ngOnInit(): void {}
 
-  clicked(event: MouseEvent) {
+  onClick(event: MouseEvent) {
     event.stopPropagation();
-    this.click.emit(event);
+    this.clicked.emit(event);
   }
 }
