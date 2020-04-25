@@ -4,7 +4,7 @@ services:
     volumes:
       - ./services/hello:/usr/src/app:rw
       - /usr/src/app/node_modules
-      
+
   users:
     volumes:
       - ./services/users:/usr/src/app:rw
@@ -18,3 +18,15 @@ services:
   proxy:
     volumes:
       - ./envoy.yaml:/etc/envoy/envoy.yaml
+
+  storybook:
+    image: x-board-frontend:dev
+    build:
+      context: frontend
+      target: dev
+    ports:
+      - 6006:6006
+    command: npm run storybook
+    volumes:
+      - ./frontend:/usr/src/app:rw
+      - /usr/src/app/node_modules
